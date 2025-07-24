@@ -1404,3 +1404,9 @@ main {
   text-align: center;
   font-size: 1rem;
 }
+.category-btn:hover {
+  transform: translateY(-4px);
+  background-color: #c72c2c;
+  color: #fff;
+  box-shadow: 0 8px 16px rgba(199,44,44,0.4);
+}
