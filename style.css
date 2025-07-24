@@ -1163,7 +1163,7 @@ main {
 @media (max-width: 768px) {
   /* make the about-image really full-width on mobile */
   .about-image img {
-    width: 100% !important;
+    width: 202% !important;
     max-width: none !important;
   }
 }
@@ -1409,4 +1409,25 @@ main {
   background-color: #c72c2c;
   color: #fff;
   box-shadow: 0 8px 16px rgba(199,44,44,0.4);
+}
+.scroll-gallery {
+  /* ΚΑΝΕΝΑ position εδώ! */
+  padding: 3rem 0;
+  background: linear-gradient(to right, #fff, #f9f9f9, #fff);
+  transition: opacity 0.3s;
+}
+#modal-gallery {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(8,8,8,0.97); /* πιο σκούρο για να μην βλέπεις πίσω */
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+#modal-gallery.active {
+  display: flex !important;
+  pointer-events: auto !important;
 }

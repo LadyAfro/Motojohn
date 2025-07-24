@@ -206,6 +206,11 @@
     </a>
   </div>
 </footer>
+<div id="modal-gallery" style="display:none; position:fixed; inset:0; z-index:99999; background:transparent; align-items:center; justify-content:center; pointer-events:none;">
+  <img id="modal-img" src="" alt="" style="max-width:72vw; max-height:58vh; border-radius:14px; box-shadow:0 4px 18px #0008; background:#fff; pointer-events:auto; transition: all 0.24s cubic-bezier(.59,1.5,.7,1);">
+  <span id="modal-close" style="position:absolute; top:18px; right:28px; font-size:2.5rem; color:#e00; cursor:pointer; user-select:none; z-index:999999; pointer-events:auto;">&times;</span>
+</div>
+
 
   <!-- JS για ενεργό μενού -->
   <script>
@@ -286,6 +291,77 @@ document.addEventListener("DOMContentLoaded", function() {
     header.classList.toggle('open');
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("modal-gallery");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.getElementById("modal-close");
+  const carousel = document.querySelector('.scroll-gallery');
+  let openImgSrc = null;
+
+  // Κλείδωμα scroll όταν modal ανοιχτό
+  function disableScroll() {
+    document.body.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden'; // just in case
+  }
+  function enableScroll() {
+    document.body.style.overflow = '';
+    document.documentElement.style.overflow = '';
+  }
+
+  // Άνοιγμα modal
+  document.querySelectorAll('.img-wrapper img').forEach(img => {
+    img.addEventListener('click', () => {
+      // toggle if same
+      if (modal.classList.contains('active') && openImgSrc === img.src) {
+        modal.classList.remove('active');
+        modalImg.src = '';
+        openImgSrc = null;
+        enableScroll();
+        if (carousel) {
+          carousel.style.visibility = "visible";
+          carousel.style.opacity = "1";
+          carousel.style.pointerEvents = "auto";
+        }
+        return;
+      }
+      modalImg.src = img.src;
+      modalImg.alt = img.alt || '';
+      modal.classList.add('active');
+      openImgSrc = img.src;
+      disableScroll();
+      if (carousel) {
+        carousel.style.visibility = "hidden";
+        carousel.style.opacity = "0";
+        carousel.style.pointerEvents = "none";
+      }
+    });
+  });
+
+  function closeModal() {
+    modal.classList.remove('active');
+    modalImg.src = '';
+    openImgSrc = null;
+    enableScroll();
+    if (carousel) {
+      carousel.style.visibility = "visible";
+      carousel.style.opacity = "1";
+      carousel.style.pointerEvents = "auto";
+    }
+  }
+
+  closeBtn.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target === modalImg) closeModal();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});
+</script>
+
 
 
 
