@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Εξατμίσεις | MotoJohn</title>
+  <link rel="stylesheet" href="../style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="header-left">
+      <img src="../images/motojohn-logo.jpg" class="logo-icon" alt="Logo">
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+
+    <!-- Hamburger toggle (εμφανίζεται μόνο σε mobile) -->
+    <button class="menu-toggle" aria-label="Άνοιγμα μενού">☰</button>
+
+    <nav class="header-nav">
+      <a href="../index.html">Αρχική</a>
+      <a href="../index.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="../accessories.html">Αξεσουάρ</a>
+          <a href="../bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="../parts.html">Ανταλλακτικά & Ελαστικά</a>
+          <a href="../helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="../index.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <section class="accessory-hero">
+    <div class="accessory-hero-overlay">
+      <div class="accessory-hero-text">
+        <h1>Εξατμίσεις</h1>
+        <p>Επιλεγμένα προϊόντα εξατμίσεων για κάθε μοτοσυκλέτα.</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="category-grid">
+    <a href="kalimaexatmisis.html" class="category-btn slide-in-hidden">
+      <img src="../images/KALUMMA EXATMISIS-230x230.jpeg" alt="Καλύμματα εξατμίσεων">
+      <span>Καλύμματα εξατμίσεων</span>
+    </a>
+    <a href="papi.html" class="category-btn slide-in-hidden">
+      <img src="../images/PAPI-230x230.jpeg" alt="Παπί">
+      <span>Παπί</span>
+    </a>
+    <a href="monkey.html" class="category-btn slide-in-hidden">
+      <img src="../images/MONKEY-230x230.jpeg" alt="Monkey">
+      <span>Monkey</span>
+    </a>
+    <a href="scooter.html" class="category-btn slide-in-hidden">
+      <img src="../images/SCOOTER-230x230.jpeg" alt="Scooter">
+      <span>Scooter</span>
+    </a>
+    <a href="sigastiras.html" class="category-btn slide-in-hidden">
+      <img src="../images/SIGASTIRAS-230x230.jpeg" alt="Σιγαστήρες">
+      <span>Σιγαστήρες</span>
+    </a>
+    <a href="solinasexatmisis.html" class="category-btn slide-in-hidden">
+      <img src="../images/SWLHNAS EXATMISIS-230x230.jpeg" alt="Σωλήνας εξατμίσεων">
+      <span>Σωλήνας εξατμίσεων</span>
+    </a>
+    <a href="telikoexatmisi.html" class="category-btn slide-in-hidden">
+      <img src="../images/TELIKO EXATMISIS-230x230.jpeg" alt="Τελικό εξατμίσεων">
+      <span>Τελικό εξατμίσεων</span>
+    </a>
+  </main>
+
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <!-- JS: Intersection Observer για slide-in -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.slide-in-hidden')
+            .forEach(el => observer.observe(el));
+  </script>
+
+  <!-- JS: Mobile menu toggle -->
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const header    = document.querySelector('.site-header');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', () => {
+        header.classList.toggle('open');
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ελαστικά | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="/motojohn/" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <nav class="header-nav">
+      <a href="index.html">Αρχική</a>
+      <a href="#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά & Ελαστικά</a>
+          <a href="helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <section class="accessory-hero parts-hero">
+    <div class="accessory-hero-overlay">
+      <div class="accessory-hero-text">
+        <h1>Ελαστικά</h1>
+        <p>Διάλεξε ανάμεσα σε διάφορα ελαστικά για κάθε χρήση.</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <a href="Λάστιχα.html" class="image-button slide-in-hidden">
+      <img src="images/lastixa.jpeg" alt="Λάστιχα" />
+      <span>Λάστιχα</span>
+    </a>
+    <a href="zantes.html" class="image-button slide-in-hidden">
+      <img src="images/zantes.jpeg" alt="Ζάντες" />
+      <span>Ζάντες</span>
+    </a>
+    <!-- Προσθέτεις κι άλλες κατηγορίες αν θες -->
+  </main>
+
+  <footer>
+    <p><a href="parts.html">← Επιστροφή στα Ανταλλακτικά & Ελαστικά</a></p>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.slide-in-hidden')
+            .forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

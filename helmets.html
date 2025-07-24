@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Κράνη | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <!-- Hamburger toggle (εμφανίζεται μόνο σε mobile) -->
+    <button class="menu-toggle" aria-label="Άνοιγμα μενού">☰</button>
+    <nav class="header-nav">
+      <a href="index.html">Αρχική</a>
+      <a href="index.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά &amp; Ελαστικά</a>
+          <a href="helmets.html" class="active">Κράνη</a>
+        </div>
+      </div>
+      <a href="index.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+
+    <!-- Hero Banner Full Background για Κράνη -->
+    <section class="accessory-hero helmets-hero">
+      <div class="accessory-hero-overlay">
+        <div class="accessory-hero-text">
+          <h1>ΚΡΑΝΗ</h1>
+          <p>Προστασία και στυλ με πιστοποιημένα κράνη για κάθε αναβάτη.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Title -->
+    <h2 class="section-title">Κράνη Μοτοσυκλέτας</h2>
+
+    <!-- Grid Products -->
+    <div class="mini-gallery-container">
+      <div class="product slide-in-hidden">
+        <img src="images/helmet1.jpg" alt="Κράνος 1" />
+        <p>Κράνος Ασφαλείας Μοντέλο 1<br>120€</p>
+      </div>
+      <div class="product slide-in-hidden">
+        <img src="images/helmet2.jpg" alt="Κράνος 2" />
+        <p>Κράνος Ασφαλείας Μοντέλο 2<br>140€</p>
+      </div>
+      <div class="product slide-in-hidden">
+        <img src="images/helmet3.jpg" alt="Κράνος 3" />
+        <p>Κράνος Ασφαλείας Μοντέλο 3<br>160€</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <!-- JS: Intersection Observer για slide-in -->
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('.slide-in-hidden').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- JS: Mobile menu toggle & logo behavior -->
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const header    = document.querySelector('.site-header');
+    const logoLink  = document.querySelector('.header-left');
+
+    // Άνοιγμα/κλείσιμο mobile menu
+    toggleBtn.addEventListener('click', () => {
+      header.classList.toggle('open');
+    });
+
+    // Κλείσιμο menu & πλοήγηση στην αρχική όταν πατηθεί το logo
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      header.classList.remove('open');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>

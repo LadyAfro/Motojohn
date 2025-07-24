@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Αξεσουάρ | MotoJohn</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html" class="header-left">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <div class="logo-text"><h1>Moto Repair Services</h1></div>
+    </a>
+    <!-- Hamburger Toggle -->
+    <button class="menu-toggle" aria-label="Άνοιγμα μενού">☰</button>
+    <nav class="header-nav">
+      <a href="index.html">Αρχική</a>
+      <a href="index.html#services">Υπηρεσίες</a>
+      <div class="dropdown">
+        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <div class="dropdown-content">
+          <a href="accessories.html" class="active">Αξεσουάρ</a>
+          <a href="bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά & Ελαστικά</a>
+          <a href="helmets.html">Κράνη</a>
+        </div>
+      </div>
+      <a href="index.html#contact">Επικοινωνία</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Hero Banner -->
+    <section class="accessory-hero">
+      <div class="accessory-hero-overlay">
+        <!-- Desktop κείμενο -->
+        <div class="accessory-hero-text desktop-only">
+          <h1>ΑΞΕΣΟΥΑΡ ΜΟΤΟΣΥΚΛΕΤΑΣ</h1>
+          <p>Επιλεγμένα εξαρτήματα και προϊόντα υψηλής ποιότητας για κάθε αναβάτη. Όλα όσα χρειάζεσαι!</p>
+        </div>
+        <!-- Mobile κείμενο -->
+        <div class="accessory-hero-text mobile-only">
+          <h1>ΑΞΕΣΟΥΑΡ</h1>
+          <h1>ΜΟΤΟΣΥΚΛΕΤΑΣ</h1>
+          <p>Ποιοτικά προϊόντα για κάθε ride.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid Καρτών Αξεσουάρ -->
+    <div class="accessory-grid">
+      <a href="exhausts/index.html" class="image-button slide-in-hidden">
+        <img src="images/EKSATMISI SUPRA-X INOX OVAL MAYRH MPOUKA PROTECHT 1.jpg" alt="Εξατμίσεις" />
+        <span>Εξατμίσεις</span>
+      </a>
+      <a href="bagkazieres.html" class="image-button slide-in-hidden">
+        <img src="images/givi_top_case_e52_maxia-0.jpg" alt="Μπαγκαζιέρες" />
+        <span>Μπαγκαζιέρες</span>
+      </a>
+      <a href="koukoules.html" class="image-button slide-in-hidden">
+        <img src="images/koukoula.png" alt="Κουκούλες Μηχανής" />
+        <span>Κουκούλες Μηχανής</span>
+      </a>
+      <a href="seles.html" class="image-button slide-in-hidden">
+        <img src="images/sela.jpeg" alt="Σέλες για Παπιά" />
+        <span>Σέλες για Παπιά</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 MotoJohn</p>
+  </footer>
+
+  <!-- JS: Menu Toggle + Scroll Animation -->
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.site-header').classList.toggle('open');
+    });
+
+    // Scroll-in animation
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('slide-in-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('.slide-in-hidden')
+      .forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
