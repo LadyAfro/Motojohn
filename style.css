@@ -1364,3 +1364,43 @@ main {
     display: flex;
   }
 }
+/* ==== style.css ==== */
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.category-btn {
+  border: 2px solid #c72c2c;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #fff;
+  text-decoration: none;
+  color: #c72c2c;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  transition: transform 0.2s;
+}
+
+.category-btn:hover {
+  transform: translateY(-4px);
+}
+
+.category-btn img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  margin-bottom: 0.75rem;
+}
+
+.category-btn span {
+  display: block;
+  text-align: center;
+  font-size: 1rem;
+}
