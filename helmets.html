@@ -11,7 +11,7 @@
   <!-- Header -->
   <header class="site-header">
     <a href="index.html" class="header-left">
-      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo" />
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="MotoJohn logo" />
       <div class="logo-text"><h1>Moto Repair Services</h1></div>
     </a>
     <!-- Hamburger toggle (εμφανίζεται μόνο σε mobile) -->
@@ -20,11 +20,11 @@
       <a href="index.html">Αρχική</a>
       <a href="index.html#services">Υπηρεσίες</a>
       <div class="dropdown">
-        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <span class="dropbtn active" aria-current="page">Προϊόντα</span>
         <div class="dropdown-content">
           <a href="accessories.html">Αξεσουάρ</a>
-          <a href="bikes.html">Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</a>
-          <a href="parts.html">Ανταλλακτικά &amp; Ελαστικά</a>
+          <a href="bikes.html">Ποδήλατα & Αξεσουάρ Ποδηλάτων</a>
+          <a href="parts.html">Ανταλλακτικά & Ελαστικά</a>
           <a href="helmets.html" class="active">Κράνη</a>
         </div>
       </div>
@@ -51,15 +51,15 @@
     <!-- Grid Products -->
     <div class="mini-gallery-container">
       <div class="product slide-in-hidden">
-        <img src="images/helmet1.jpg" alt="Κράνος 1" />
+        <img src="images/helmet1.jpg" alt="Κράνος Ασφαλείας Ls2 Μοντέλο 1" />
         <p>Κράνος Ασφαλείας Μοντέλο 1<br>120€</p>
       </div>
       <div class="product slide-in-hidden">
-        <img src="images/helmet2.jpg" alt="Κράνος 2" />
+        <img src="images/helmet2.jpg" alt="Κράνος Adventure Μοντέλο 2 Γκρι" />
         <p>Κράνος Ασφαλείας Μοντέλο 2<br>140€</p>
       </div>
       <div class="product slide-in-hidden">
-        <img src="images/helmet3.jpg" alt="Κράνος 3" />
+        <img src="images/helmet3.jpg" alt="Κράνος Open Face Χρωματιστό" />
         <p>Κράνος Ασφαλείας Μοντέλο 3<br>160€</p>
       </div>
     </div>
@@ -90,12 +90,10 @@
     const header    = document.querySelector('.site-header');
     const logoLink  = document.querySelector('.header-left');
 
-    // Άνοιγμα/κλείσιμο mobile menu
     toggleBtn.addEventListener('click', () => {
       header.classList.toggle('open');
     });
 
-    // Κλείσιμο menu & πλοήγηση στην αρχική όταν πατηθεί το logo
     logoLink.addEventListener('click', (e) => {
       e.preventDefault();
       header.classList.remove('open');

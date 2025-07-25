@@ -123,6 +123,10 @@ main {
 .header-nav a:hover,
 .header-nav a.active {
   color: var(--clr-primary);
+    background-color: #fff3f3;
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #a60000; /* πιο σκούρο κόκκινο */
 }
 
 .header-nav a::after {

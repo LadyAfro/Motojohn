@@ -11,16 +11,15 @@
   <!-- Header -->
   <header class="site-header">
     <a href="index.html" class="header-left">
-      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="Logo">
+      <img src="images/motojohn-logo.jpg" class="logo-icon" alt="MotoJohn logo">
       <div class="logo-text"><h1>Moto Repair Services</h1></div>
     </a>
-    <!-- Hamburger toggle (εμφανίζεται μόνο σε mobile) -->
     <button class="menu-toggle" aria-label="Άνοιγμα μενού">☰</button>
     <nav class="header-nav">
       <a href="index.html">Αρχική</a>
       <a href="index.html#services">Υπηρεσίες</a>
       <div class="dropdown">
-        <a href="#" class="dropbtn active">Προϊόντα</a>
+        <a href="#" class="dropbtn active" aria-current="page">Προϊόντα</a>
         <div class="dropdown-content">
           <a href="accessories.html">Αξεσουάρ</a>
           <a href="bikes.html">Ποδήλατα &amp; Αξεσουάρ Ποδηλάτων</a>
@@ -45,11 +44,11 @@
   <!-- Main grid με δύο επιλογές -->
   <main class="accessory-grid">
     <a href="antallaktika.html" class="image-button slide-in-hidden">
-      <img src="images/antallaktika.jpg" alt="Ανταλλακτικά">
+      <img src="images/antallaktika.jpg" alt="">
       <span>Ανταλλακτικά</span>
     </a>
     <a href="elastika.html" class="image-button slide-in-hidden">
-      <img src="images/elastika.jpg" alt="Ελαστικά">
+      <img src="images/elastika.jpg" alt="">
       <span>Ελαστικά</span>
     </a>
   </main>
@@ -80,12 +79,10 @@
     const header    = document.querySelector('.site-header');
     const logoLink  = document.querySelector('.header-left');
 
-    // Άνοιγμα/κλείσιμο mobile menu
     toggleBtn.addEventListener('click', () => {
       header.classList.toggle('open');
     });
 
-    // Κλείσιμο menu & πλοήγηση στην αρχική όταν πατηθεί το logo
     logoLink.addEventListener('click', (e) => {
       e.preventDefault();
       header.classList.remove('open');
