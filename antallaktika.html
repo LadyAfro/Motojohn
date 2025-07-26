@@ -14,6 +14,7 @@
       <img src="images/motojohn-logo.jpg" class="logo-icon" alt="MotoJohn logo" />
       <div class="logo-text"><h1>Moto Repair Services</h1></div>
     </a>
+    <button class="menu-toggle" aria-label="Άνοιγμα μενού">☰</button>
     <nav class="header-nav">
       <a href="index.html">Αρχική</a>
       <a href="index.html#services">Υπηρεσίες</a>
@@ -76,6 +77,23 @@
       });
     }, { threshold: 0.3 });
     document.querySelectorAll('.slide-in-hidden').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- Mobile Menu Toggle -->
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const header = document.querySelector('.site-header');
+    const logoLink = document.querySelector('.header-left');
+
+    toggleBtn.addEventListener('click', () => {
+      header.classList.toggle('open');
+    });
+
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      header.classList.remove('open');
+      window.location.href = '/motojohn/';
+    });
   </script>
 
 </body>
